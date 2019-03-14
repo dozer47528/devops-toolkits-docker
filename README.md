@@ -1,7 +1,6 @@
 # devops-toolkits-docker
 Docker container includes toolkits for devops.
 
-# Api Blueprint Docker
 [![Docker Stars](https://img.shields.io/docker/stars/aminoapps/devops-toolkits-docker.svg)](https://hub.docker.com/r/aminoapps/devops-toolkits-docker/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/aminoapps/devops-toolkits-docker.svg)](https://hub.docker.com/r/aminoapps/devops-toolkits-docker/)
 [![Image Size](https://img.shields.io/imagelayers/image-size/aminoapps/devops-toolkits-docker/latest.svg)](https://imagelayers.io/?images=aminoapps/devops-toolkits-docker:latest)
