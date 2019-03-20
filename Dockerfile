@@ -6,7 +6,6 @@ RUN apt install -y curl
 RUN apt install -y git
 RUN apt install -y zsh
 RUN apt install -y wget
-RUN apt install -y python-pip
 RUN apt install -y net-tools
 RUN apt install -y htop
 RUN apt install -y mycli
