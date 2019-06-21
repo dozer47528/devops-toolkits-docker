@@ -17,6 +17,7 @@ RUN apt install -y lsof
 RUN apt install -y iproute2
 RUN apt install -y tcpdump
 RUN apt install -y default-jdk
+RUN apt install -y vim
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
