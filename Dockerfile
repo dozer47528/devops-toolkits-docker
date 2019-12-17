@@ -19,6 +19,10 @@ RUN apt install -y tcpdump
 RUN apt install -y vim
 RUN apt install -y sysbench
 
+RUN wget https://github.com/fortio/fortio/releases/download/v1.3.1/fortio_1.3.1-1_amd64.deb
+RUN dpkg -i fortio_1.3.1-1_amd64.deb
+RUN rm -f fortio_1.3.1-1_amd64.deb
+
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 COPY .zshrc /root/.zshrc
