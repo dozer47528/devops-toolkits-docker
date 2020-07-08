@@ -4,7 +4,7 @@ RUN apt-get update -y
 RUN apt-get install -y \
     curl git zsh wget net-tools htop mycli mysql-client \
     iputils-ping dnsutils telnet redis-tools lsof iproute2 \
-    tcpdump vim sysbench \
+    tcpdump vim sysbench ssldump \
     && apt-get clean
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
