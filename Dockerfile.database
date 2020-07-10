@@ -1,0 +1,3 @@
+FROM dozer47528/devops-toolkits-docker
+
+RUN /scripts/database && /scripts/cleanup
