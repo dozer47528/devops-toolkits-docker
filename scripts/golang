@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+apt-get update -y
+apt-get install -y git
+
+GO_VERSION=`curl https://golang.org/VERSION\?m=text`
+GO_VERSION=${GO_VERSION/go/}
+
+curl -LO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
+tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+rm -rf go${GO_VERSION}.linux-amd64.tar.gz
+export GOPATH=/go
+export GOROOT=/usr/local/go
+export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin
+
+# golang remote debug tool
+go get github.com/go-delve/delve/cmd/dlv

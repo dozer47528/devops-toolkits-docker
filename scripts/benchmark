@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+apt-get update -y
+apt-get install -y sysbench apache2-utils
+FORTIO_VERSION=`curl --silent "https://api.github.com/repos/fortio/fortio/tags" | jq -r '.[0].name'`
+FORTIO_VERSION=${FORTIO_VERSION/v/}
+curl -LO https://github.com/fortio/fortio/releases/download/v${FORTIO_VERSION}/fortio_${FORTIO_VERSION}_amd64.deb
+dpkg -i fortio_${FORTIO_VERSION}_amd64.deb
+rm -f fortio_${FORTIO_VERSION}_amd64.deb

@@ -9,5 +9,5 @@ Docker container includes toolkits for devops.
 
 # How to use
 ```shell
-kubectl run devops --rm --image=aminoapps/devops-toolkits-docker:latest -it zsh
+kubectl run devops-yuyang --rm --image=dozer47528/devops-toolkits-docker:latest -it
 ```
