@@ -1,5 +1,7 @@
-FROM ubuntu:20.04
+FROM golang:latest AS golang
+RUN go get github.com/go-delve/delve/cmd/dlv
 
+FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y
 RUN apt-get install -y \
@@ -11,5 +13,5 @@ RUN apt-get install -y \
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
 RUN wget https://github.com/fortio/fortio/releases/download/v1.4.1/fortio_1.4.1_amd64.deb && dpkg -i fortio_1.4.1_amd64.deb && rm -f fortio_1.4.1_amd64.deb
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-
 COPY .zshrc /root/.zshrc
+COPY --from=golang /go/bin/dlv /usr/local/bin/dlv
