@@ -1,0 +1,4 @@
+FROM dozer47528/devops-toolkits-docker
+COPY ./scripts /scripts
+RUN chmod +x /scripts/*
+RUN /scripts/websocket && /scripts/cleanup
