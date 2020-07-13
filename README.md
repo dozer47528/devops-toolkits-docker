@@ -20,3 +20,4 @@ kubectl run devops-yuyang --rm --image=dozer47528/devops-toolkits-docker:latest 
 - `golang`: golang toolkit
 - `jdk8`: jdk8 toolkit
 - `jdk11`: jdk11 toolkit
+- `websocket`: wscat for debugging websocket
