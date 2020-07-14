@@ -11,9 +11,12 @@ GO_VERSION=${GO_VERSION/go/}
 curl -LO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
 tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
 rm -rf go${GO_VERSION}.linux-amd64.tar.gz
-export GOPATH=/go
-export GOROOT=/usr/local/go
-export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin
+
+echo '' >> /root/.bashrc
+echo 'export GOPATH=/go' >> /root/.bashrc
+echo 'export GOROOT=/usr/local/go' >> /root/.bashrc
+echo 'export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin' >> /root/.bashrc
+source /root/.bashrc
 
 # golang remote debug tool
 go get github.com/go-delve/delve/cmd/dlv
