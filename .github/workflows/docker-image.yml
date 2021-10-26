@@ -23,4 +23,4 @@ jobs:
       -
         name: Build latest
         run: |
-          docker build --platform linux/arm64,linux/amd64 -t dozer47528/devops-toolkits-docker:latest .
+          docker build --platform arm64,amd64 -t dozer47528/devops-toolkits-docker:latest .
