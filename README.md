@@ -3,8 +3,6 @@ Docker container includes toolkits for devops.
 
 [![Docker Stars](https://img.shields.io/docker/stars/dozer47528/devops-toolkits-docker.svg)](https://hub.docker.com/r/dozer47528/devops-toolkits-docker/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dozer47528/devops-toolkits-docker.svg)](https://hub.docker.com/r/dozer47528/devops-toolkits-docker/)
-[![Image Size](https://img.shields.io/imagelayers/image-size/dozer47528/devops-toolkits-docker/latest.svg)](https://imagelayers.io/?images=dozer47528/devops-toolkits-docker:latest)
-[![Image Layers](https://img.shields.io/imagelayers/layers/dozer47528/devops-toolkits-docker/latest.svg)](https://imagelayers.io/?images=dozer47528/devops-toolkits-docker:latest)
 
 
 ## How to use

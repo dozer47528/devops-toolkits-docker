@@ -25,7 +25,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build
+      - name: Build latest
         uses: docker/build-push-action@v2
         with:
           builder: ${{ steps.buildx.outputs.name }}
@@ -34,3 +34,57 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: dozer47528/devops-toolkits-docker:latest
+      - name: Build database
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile.database
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: dozer47528/devops-toolkits-docker:database
+      - name: Build benchmark
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile.benchmark
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: dozer47528/devops-toolkits-docker:benchmark
+      - name: Build golang
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile.golang
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: dozer47528/devops-toolkits-docker:golang
+      - name: Build jdk11
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile.jdk11
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: dozer47528/devops-toolkits-docker:jdk11
+      - name: Build jdk8
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile.jdk8
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: dozer47528/devops-toolkits-docker:jdk8
+      - name: Build websocket
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile.websocket
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: dozer47528/devops-toolkits-docker:websocket
