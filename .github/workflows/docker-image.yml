@@ -34,24 +34,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: dozer47528/devops-toolkits-docker:latest
-      - name: Build database
-        uses: docker/build-push-action@v2
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: .
-          file: ./Dockerfile.database
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: dozer47528/devops-toolkits-docker:database
-      - name: Build benchmark
-        uses: docker/build-push-action@v2
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: .
-          file: ./Dockerfile.benchmark
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: dozer47528/devops-toolkits-docker:benchmark
       - name: Build golang
         uses: docker/build-push-action@v2
         with:
@@ -61,6 +43,24 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: dozer47528/devops-toolkits-docker:golang
+      - name: Build benchmark
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile.benchmark
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: dozer47528/devops-toolkits-docker:benchmark
+      - name: Build database
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile.database
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: dozer47528/devops-toolkits-docker:database
       - name: Build jdk11
         uses: docker/build-push-action@v2
         with:
