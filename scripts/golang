@@ -7,10 +7,11 @@ apt-get install -y git
 
 GO_VERSION=`curl https://golang.org/VERSION\?m=text`
 GO_VERSION=${GO_VERSION/go/}
+GO_ARCH=`uname -m`
 
-curl -LO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
-tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
-rm -rf go${GO_VERSION}.linux-amd64.tar.gz
+curl -LO https://golang.org/dl/go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
+tar -C /usr/local -xzf go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
+rm -rf go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
 
 echo '' >> /root/.bashrc
 echo 'export GOPATH=/go' >> /root/.bashrc
