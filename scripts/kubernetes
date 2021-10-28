@@ -2,6 +2,12 @@
 
 set -e
 
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
+if [[ `uname -m` == "arm64" ]] || [[ `uname -m` == "aarch64" ]]; then
+    KUBECTL_ARCH="arm64"
+else
+    KUBECTL_ARCH="amd64"
+fi
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/${KUBECTL_ARCH}/kubectl
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl

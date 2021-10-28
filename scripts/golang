@@ -2,12 +2,13 @@
 
 set -e
 
-apt-get update -y
-apt-get install -y git
-
 GO_VERSION=`curl https://golang.org/VERSION\?m=text`
 GO_VERSION=${GO_VERSION/go/}
-GO_ARCH=`uname -m`
+if [[ `uname -m` == "arm64" ]] || [[ `uname -m` == "aarch64" ]]; then
+    GO_ARCH="arm64"
+else
+    GO_ARCH="amd64"
+fi
 
 curl -LO https://golang.org/dl/go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
 tar -C /usr/local -xzf go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
