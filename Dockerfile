@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
-    ca-certificates sudo curl net-tools htop iputils-ping dnsutils telnet lsof iproute2 tcpdump vim ssldump iptables tree jq w3m make && \
+    ca-certificates sudo curl git net-tools htop iputils-ping dnsutils telnet lsof iproute2 tcpdump vim ssldump iptables tree jq w3m make && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
