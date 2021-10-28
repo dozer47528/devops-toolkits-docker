@@ -3,7 +3,7 @@
 set -e
 
 # fortio
-./scripts/golang
+./scripts/golang && source /root/.bashrc
 go get fortio.org/fortio
 
 apt-get update -y
