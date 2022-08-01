@@ -4,7 +4,7 @@ set -e
 
 # fortio
 ./scripts/golang && source /root/.bashrc
-go get fortio.org/fortio
+go install fortio.org/fortio@master
 
 apt-get update -y
 apt-get install -y sysbench apache2-utils
