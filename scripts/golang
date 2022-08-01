@@ -2,7 +2,7 @@
 
 set -e
 
-GO_VERSION=`curl https://golang.org/VERSION\?m=text`
+GO_VERSION=`curl -L https://go.dev/VERSION\?m=text`
 GO_VERSION=${GO_VERSION/go/}
 if [[ `uname -m` == "arm64" ]] || [[ `uname -m` == "aarch64" ]]; then
     GO_ARCH="arm64"
@@ -10,7 +10,7 @@ else
     GO_ARCH="amd64"
 fi
 
-curl -LO https://golang.org/dl/go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
+curl -LO https://go.dev/dl/go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
 tar -C /usr/local -xzf go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
 rm -rf go${GO_VERSION}.linux-${GO_ARCH}.tar.gz
 
