@@ -21,4 +21,4 @@ echo 'export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin' >> /root/.bashrc
 source /root/.bashrc
 
 # golang remote debug tool
-go get github.com/go-delve/delve/cmd/dlv
+go install github.com/go-delve/delve/cmd/dlv@master
